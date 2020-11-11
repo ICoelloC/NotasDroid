@@ -2,12 +2,23 @@
     <string name="app_name">NotasDroid</string>
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
-    <string name="nav_header_title">Android Studio</string>
-    <string name="nav_header_subtitle">android.studio@android.com</string>
+    <string name="nav_header_title">Nombre y apellidos del alumno</string>
+    <string name="nav_header_subtitle">correoalumno@gmail.com</string>
     <string name="nav_header_desc">Navigation header</string>
     <string name="action_settings">Settings</string>
 
-    <string name="menu_home">Home</string>
+    <string name="menu_expediente">Expediente</string>
     <string name="menu_gallery">Gallery</string>
     <string name="menu_slideshow">Slideshow</string>
+
+    <string name="home_fotoperfil">Foto perfil</string>
+    <string name="home_nombreyapellidos">Nombre y apellidos alumno</string>
+    <string name="home_correo">correoalumno@gmail.com</string>
+    <string name="home_contraseña">Contraseña</string>
+    <string name="home_ciclo">Ciclo formativo</string>
+    <string name="home_curso">Curso</string>
+    <string name="home_titulonotamedia">Nota media del grado:</string>
+    <string name="home_notamedia">6.75</string>
+    <string name="home_cambiarfoto">Elegir Foto</string>
+    <string name="home_sacarfoto">Sacar Foto</string>
 </resources>

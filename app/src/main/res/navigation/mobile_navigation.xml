@@ -6,10 +6,10 @@
     app:startDestination="@+id/nav_home">
 
     <fragment
-        android:id="@+id/nav_home"
-        android:name="com.icoelloc.notasdroid.ui.home.HomeFragment"
-        android:label="@string/menu_home"
-        tools:layout="@layout/fragment_home" />
+        android:id="@+id/nav_expediente"
+        android:name="com.icoelloc.notasdroid.ui.expediente.ExpedienteFragment"
+        android:label="@string/menu_expediente"
+        tools:layout="@layout/fragment_expediente" />
 
     <fragment
         android:id="@+id/nav_gallery"
