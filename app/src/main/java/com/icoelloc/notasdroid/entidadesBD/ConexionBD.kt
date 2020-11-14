@@ -14,7 +14,6 @@ class ConexionBD (@Nullable context: Context?, @Nullable name: String?, @Nullabl
 
     //Sentencia SQL para crear la tabla de Alumno
     private val ALUMNO_DB = "Alumno"
-    private
 
     override fun onCreate(db: SQLiteDatabase?) {
         TODO("Not yet implemented")
