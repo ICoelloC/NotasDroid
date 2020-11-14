@@ -1,4 +1,4 @@
-package com.icoelloc.notasdroid.ui.gallery
+package com.icoelloc.notasdroid.ui.matricula
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -10,20 +10,20 @@ import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import com.icoelloc.notasdroid.R
 
-class GalleryFragment : Fragment() {
+class MatriculaFragment : Fragment() {
 
-    private lateinit var galleryViewModel: GalleryViewModel
+    private lateinit var matriculaViewModel: MatriculaViewModel
 
     override fun onCreateView(
             inflater: LayoutInflater,
             container: ViewGroup?,
             savedInstanceState: Bundle?
     ): View? {
-        galleryViewModel =
-                ViewModelProvider(this).get(GalleryViewModel::class.java)
-        val root = inflater.inflate(R.layout.fragment_gallery, container, false)
-        val textView: TextView = root.findViewById(R.id.text_gallery)
-        galleryViewModel.text.observe(viewLifecycleOwner, Observer {
+        matriculaViewModel =
+                ViewModelProvider(this).get(MatriculaViewModel::class.java)
+        val root = inflater.inflate(R.layout.fragment_matricula, container, false)
+        val textView: TextView = root.findViewById(R.id.matricula_lbl_titulo)
+        matriculaViewModel.text.observe(viewLifecycleOwner, Observer {
             textView.text = it
         })
         return root

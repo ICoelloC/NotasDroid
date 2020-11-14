@@ -1,13 +1,13 @@
-package com.icoelloc.notasdroid.ui.gallery
+package com.icoelloc.notasdroid.ui.expediente
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 
-class GalleryViewModel : ViewModel() {
+class ExpedienteViewModel : ViewModel() {
 
     private val _text = MutableLiveData<String>().apply {
-        value = "This is gallery Fragment"
+        value = "MI EXPEDIENTE"
     }
     val text: LiveData<String> = _text
 }
