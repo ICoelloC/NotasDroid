@@ -1,0 +1,204 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".RegisterActivity">
+
+    <ImageView
+        android:id="@+id/register_foto"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="12dp"
+        android:layout_marginTop="5dp"
+        android:contentDescription="@string/register_foto"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView4"
+        tools:srcCompat="@tools:sample/avatars" />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/register_btn_gallery"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="6dp"
+        android:clickable="true"
+        android:contentDescription="@string/register_btn_gallery"
+        android:focusable="true"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/register_foto"
+        app:srcCompat="@drawable/ic_home_foto" />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/register_btn_camera"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="13dp"
+        android:layout_marginTop="6dp"
+        android:clickable="true"
+        android:contentDescription="@string/register_btn_camera"
+        android:focusable="true"
+        app:layout_constraintStart_toEndOf="@+id/register_btn_gallery"
+        app:layout_constraintTop_toBottomOf="@+id/register_foto"
+        app:srcCompat="@drawable/ic_home_sacarfoto" />
+
+    <TextView
+        android:id="@+id/register_lbl_nya"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="9dp"
+        android:layout_marginTop="10dp"
+        android:text="@string/register_nombreapellidos"
+        app:layout_constraintStart_toEndOf="@+id/register_foto"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/register_nya"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="9dp"
+        android:layout_marginTop="5dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        app:layout_constraintStart_toEndOf="@+id/register_foto"
+        app:layout_constraintTop_toBottomOf="@+id/register_lbl_nya"
+        android:autofillHints="" />
+
+    <TextView
+        android:id="@+id/register_lbl_mail"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="9dp"
+        android:layout_marginTop="9dp"
+        android:text="@string/register_correo"
+        app:layout_constraintStart_toEndOf="@+id/register_foto"
+        app:layout_constraintTop_toBottomOf="@+id/register_nya" />
+
+    <EditText
+        android:id="@+id/register_mail"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="9dp"
+        android:layout_marginTop="5dp"
+        android:ems="10"
+        android:inputType="textEmailAddress"
+        app:layout_constraintStart_toEndOf="@+id/register_foto"
+        app:layout_constraintTop_toBottomOf="@+id/register_lbl_mail"
+        android:autofillHints="" />
+
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="13dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="15dp"
+        android:text="@string/register_foto"
+        app:layout_constraintBottom_toTopOf="@+id/register_foto"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/register_lbl_contrasenia"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="9dp"
+        android:layout_marginTop="9dp"
+        android:text="@string/register_contrasenia"
+        app:layout_constraintStart_toEndOf="@+id/register_btn_camera"
+        app:layout_constraintTop_toBottomOf="@+id/register_mail" />
+
+    <EditText
+        android:id="@+id/register_contrasenia"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="9dp"
+        android:layout_marginTop="5dp"
+        android:ems="10"
+        android:inputType="textPassword"
+        app:layout_constraintStart_toEndOf="@+id/register_btn_camera"
+        app:layout_constraintTop_toBottomOf="@+id/register_lbl_contrasenia"
+        android:autofillHints="" />
+
+    <TextView
+        android:id="@+id/register_lbl_ciclo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="12dp"
+        android:layout_marginTop="236dp"
+        android:text="@string/register_ciclo"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <RadioGroup
+        android:id="@+id/register_rg_ciclo"
+        android:layout_width="67dp"
+        android:layout_height="66dp"
+        android:layout_marginStart="12dp"
+        android:layout_marginTop="8dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/register_lbl_ciclo">
+
+        <RadioButton
+            android:id="@+id/register_rbt_dam"
+            android:layout_width="71dp"
+            android:layout_height="21dp"
+            android:text="@string/register_rbt_dam" />
+
+        <RadioButton
+            android:id="@+id/register_rbt_daw"
+            android:layout_width="71dp"
+            android:layout_height="21dp"
+            android:text="@string/register_rbt_daw" />
+
+        <RadioButton
+            android:id="@+id/register_rbt_asir"
+            android:layout_width="71dp"
+            android:layout_height="21dp"
+            android:text="@string/register_rbt_asir" />
+    </RadioGroup>
+
+    <TextView
+        android:id="@+id/register_lbl_curso"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="236dp"
+        android:text="@string/register_curso"
+        app:layout_constraintStart_toEndOf="@+id/register_lbl_ciclo"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <RadioGroup
+        android:layout_width="49dp"
+        android:layout_height="56dp"
+        android:layout_marginStart="51dp"
+        android:layout_marginTop="8dp"
+        app:layout_constraintStart_toEndOf="@+id/register_rg_ciclo"
+        app:layout_constraintTop_toBottomOf="@+id/register_lbl_curso">
+
+        <RadioButton
+            android:id="@+id/register_rbt_primero"
+            android:layout_width="wrap_content"
+            android:layout_height="27dp"
+            android:text="@string/register_rbt_primero" />
+
+        <RadioButton
+            android:id="@+id/register_rbt_segundo"
+            android:layout_width="wrap_content"
+            android:layout_height="27dp"
+            android:text="@string/register_rbt_segundo" />
+    </RadioGroup>
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/floatingActionButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="27dp"
+        android:layout_marginBottom="27dp"
+        android:clickable="true"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:srcCompat="@drawable/ic_login_register" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

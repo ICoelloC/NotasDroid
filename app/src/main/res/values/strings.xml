@@ -21,4 +21,26 @@
     <string name="home_notamedia">6.75</string>
     <string name="home_cambiarfoto">Elegir Foto</string>
     <string name="home_sacarfoto">Sacar Foto</string>
+    <string name="title_activity_iniciar_sesion">IniciarSesionActivity</string>
+
+    <string name="login_correo">Correo Electrónico</string>
+    <string name="login_contrasenia">Contraseña</string>
+    <string name="login_logoapp">Logo Aplicación</string>
+    <string name="login_btn_login">Iniciar sesión</string>
+    <string name="login_btn_register">Registrarse</string>
+
+    <string name="register_nombreapellidos">Nombre y apellidos:</string>
+    <string name="register_correo">Correo Electrónico:</string>
+    <string name="register_contrasenia">Contraseña:</string>
+    <string name="register_ciclo">Ciclo Formativo:</string>
+    <string name="register_curso">Curso:</string>
+    <string name="register_foto">Foto Perfil</string>
+    <string name="register_logoapp">Logo Aplicación</string>
+    <string name="register_rbt_dam">DAM</string>
+    <string name="register_rbt_daw">DAW</string>
+    <string name="register_rbt_asir">ASIR</string>
+    <string name="register_rbt_primero">1º</string>
+    <string name="register_rbt_segundo">2º</string>
+    <string name="register_btn_gallery">Escoger foto de la galería</string>
+    <string name="register_btn_camera">Sacar foto</string>
 </resources>
