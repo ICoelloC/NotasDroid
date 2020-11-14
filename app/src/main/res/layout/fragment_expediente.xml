@@ -8,8 +8,8 @@
 
     <TextView
         android:id="@+id/text_home"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_width="134dp"
+        android:layout_height="29dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
@@ -37,26 +37,22 @@
         android:id="@+id/home_nombreyapellidos"
         android:layout_width="213dp"
         android:layout_height="17dp"
-        android:layout_marginStart="26dp"
+        android:layout_marginStart="150dp"
         android:layout_marginTop="24dp"
-        android:layout_marginEnd="28dp"
         android:text="@string/home_nombreyapellidos"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toEndOf="@+id/home_fotoperfil"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/text_home" />
 
     <TextView
         android:id="@+id/home_correo"
         android:layout_width="214dp"
         android:layout_height="21dp"
-        android:layout_marginStart="26dp"
+        android:layout_marginStart="150dp"
         android:layout_marginTop="32dp"
-        android:layout_marginEnd="27dp"
         android:text="@string/home_correo"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toEndOf="@+id/home_fotoperfil"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/home_nombreyapellidos" />
 
     <TextView
@@ -64,35 +60,37 @@
         android:layout_width="42dp"
         android:layout_height="25dp"
         android:layout_marginStart="17dp"
-        android:layout_marginTop="32dp"
+        android:layout_marginTop="170dp"
         android:layout_marginEnd="180dp"
         android:text="@string/home_curso"
+        android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/home_fotoperfil" />
+        app:layout_constraintTop_toBottomOf="@+id/text_home" />
 
     <TextView
         android:id="@+id/home_notamedia"
         android:layout_width="53dp"
         android:layout_height="20dp"
-        android:layout_marginStart="17dp"
-        android:layout_marginTop="92dp"
+        android:layout_marginStart="5dp"
+        android:layout_marginTop="10dp"
         android:layout_marginEnd="188dp"
         android:text="@string/home_notamedia"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toEndOf="@+id/home_titulonotamedia"
-        app:layout_constraintTop_toBottomOf="@+id/home_contrasenia" />
+        app:layout_constraintTop_toBottomOf="@+id/home_curso" />
 
     <TextView
         android:id="@+id/home_titulonotamedia"
         android:layout_width="145dp"
         android:layout_height="20dp"
         android:layout_marginStart="17dp"
-        android:layout_marginTop="32dp"
+        android:layout_marginTop="10dp"
         android:layout_marginEnd="180dp"
         android:text="@string/home_titulonotamedia"
+        android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
@@ -100,29 +98,27 @@
 
     <TextView
         android:id="@+id/home_ciclo"
-        android:layout_width="44dp"
-        android:layout_height="25dp"
-        android:layout_marginStart="17dp"
-        android:layout_marginTop="32dp"
+        android:layout_width="101dp"
+        android:layout_height="22dp"
+        android:layout_marginStart="5dp"
+        android:layout_marginTop="170dp"
         android:layout_marginEnd="180dp"
         android:text="@string/home_ciclo"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.018"
         app:layout_constraintStart_toEndOf="@+id/home_curso"
-        app:layout_constraintTop_toBottomOf="@+id/home_fotoperfil" />
+        app:layout_constraintTop_toBottomOf="@+id/text_home" />
 
     <TextView
         android:id="@+id/home_contrasenia"
         android:layout_width="214dp"
         android:layout_height="21dp"
-        android:layout_marginStart="26dp"
+        android:layout_marginStart="150dp"
         android:layout_marginTop="32dp"
-        android:layout_marginEnd="27dp"
         android:password="true"
         android:text="@string/home_contraseña"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toEndOf="@+id/home_fotoperfil"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/home_correo" />
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton

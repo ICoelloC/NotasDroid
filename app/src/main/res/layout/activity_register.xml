@@ -22,12 +22,12 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
-        android:layout_marginTop="6dp"
+        android:layout_marginTop="170dp"
         android:clickable="true"
         android:contentDescription="@string/register_btn_gallery"
         android:focusable="true"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/register_foto"
+        app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/ic_home_foto" />
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
@@ -35,57 +35,57 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="13dp"
-        android:layout_marginTop="6dp"
+        android:layout_marginTop="170dp"
         android:clickable="true"
         android:contentDescription="@string/register_btn_camera"
         android:focusable="true"
         app:layout_constraintStart_toEndOf="@+id/register_btn_gallery"
-        app:layout_constraintTop_toBottomOf="@+id/register_foto"
+        app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/ic_home_sacarfoto" />
 
     <TextView
         android:id="@+id/register_lbl_nya"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="9dp"
+        android:layout_marginStart="150dp"
         android:layout_marginTop="10dp"
         android:text="@string/register_nombreapellidos"
-        app:layout_constraintStart_toEndOf="@+id/register_foto"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
         android:id="@+id/register_nya"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="9dp"
+        android:layout_marginStart="150dp"
         android:layout_marginTop="5dp"
+        android:autofillHints=""
         android:ems="10"
         android:inputType="textPersonName"
-        app:layout_constraintStart_toEndOf="@+id/register_foto"
-        app:layout_constraintTop_toBottomOf="@+id/register_lbl_nya"
-        android:autofillHints="" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/register_lbl_nya" />
 
     <TextView
         android:id="@+id/register_lbl_mail"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="9dp"
+        android:layout_marginStart="150dp"
         android:layout_marginTop="9dp"
         android:text="@string/register_correo"
-        app:layout_constraintStart_toEndOf="@+id/register_foto"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/register_nya" />
 
     <EditText
         android:id="@+id/register_mail"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="9dp"
+        android:layout_marginStart="150dp"
         android:layout_marginTop="5dp"
+        android:autofillHints=""
         android:ems="10"
         android:inputType="textEmailAddress"
-        app:layout_constraintStart_toEndOf="@+id/register_foto"
-        app:layout_constraintTop_toBottomOf="@+id/register_lbl_mail"
-        android:autofillHints="" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/register_lbl_mail" />
 
     <TextView
         android:id="@+id/textView4"
@@ -191,7 +191,7 @@
     </RadioGroup>
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/floatingActionButton"
+        android:id="@+id/register_btn_registrar"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="27dp"

@@ -8,7 +8,7 @@
     <string name="action_settings">Settings</string>
 
     <string name="menu_expediente">Expediente</string>
-    <string name="menu_gallery">Gallery</string>
+    <string name="menu_matricula">Matricula</string>
     <string name="menu_slideshow">Slideshow</string>
 
     <string name="home_fotoperfil">Foto perfil</string>
@@ -16,7 +16,7 @@
     <string name="home_correo">correoalumno@gmail.com</string>
     <string name="home_contraseña">Contraseña</string>
     <string name="home_ciclo">Ciclo formativo</string>
-    <string name="home_curso">Curso</string>
+    <string name="home_curso">Curso:</string>
     <string name="home_titulonotamedia">Nota media del grado:</string>
     <string name="home_notamedia">6.75</string>
     <string name="home_cambiarfoto">Elegir Foto</string>
