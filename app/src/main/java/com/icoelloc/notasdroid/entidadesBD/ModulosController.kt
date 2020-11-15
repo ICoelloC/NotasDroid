@@ -1,10 +1,13 @@
 package com.icoelloc.notasdroid.entidadesBD
 
 import android.annotation.SuppressLint
+import android.content.ContentValues
 import android.content.Context
 import android.database.Cursor
+import android.database.SQLException
 import android.database.sqlite.SQLiteDatabase
 import android.os.strictmode.SqliteObjectLeakedViolation
+import android.util.Log
 import com.icoelloc.notasdroid.R
 
 object ModulosController {
@@ -13,7 +16,6 @@ object ModulosController {
 
     fun initModulos(): MutableList<Modulos> {
         val modulos = mutableListOf<Modulos>() //lista de modulos
-
         //DAM 1º
         modulos.add(Modulos("DAM", "1º","SISTEMAS INFORMATICOS", R.drawable.ic_modulos_sistemasinformaticos))
         modulos.add(Modulos("DAM", "1º","BASES DE DATOS", R.drawable.ic_modulos_basedatos))
@@ -70,15 +72,40 @@ object ModulosController {
              * Esto nos servirá para cargar la lista recyclerview con la información para cada
              * módulo, cada módulo, irá en un cardview
              */
+
+
+    fun insertDato(modulo: Modulos, context: Context?): Boolean {
+        // se insertan sin problemas porque lugares es clave primaria, si ya están no hace nada
+        // Abrimos la BD en modo escritura
+        val bdDatos = ConexionBD(context, NOMRBE_BD, null, VERSION_BD)
+        val bd: SQLiteDatabase = bdDatos.writableDatabase
+        var sal = false
+        try {
+            //Cargamos los parámetros
+            val valores = ContentValues()
+            valores.put("NOMBRE_MODULO", modulo.nombreModulo)
+            valores.put("CICLO",modulo.ciclo)
+            valores.put("CURSO",modulo.curso)
+            valores.put("FOTO_MODULO", modulo.fotoModulo)
+            val res = bd.insert(ConexionBD.MODULOS_TABLE, null, valores)
+            sal = true
+        } catch (ex: SQLException) {
+        } finally {
+            bd.close()
+            bdDatos.close()
+            return sal
+        }
+    }
+
     fun selectModulos(curso: String, ciclo: String, context: Context?):MutableList<Modulos>? {
         //Se abre la base de datos en modo lectura
         val lista = mutableListOf<Modulos>()
         val bdModulos = ConexionBD(context, NOMRBE_BD, null, VERSION_BD)
         val bd:SQLiteDatabase = bdModulos.readableDatabase
 
-        val filtro = "CICLO = $ciclo AND CURSO = $curso"
+        val filtro = "WHERE CICLO = $ciclo AND CURSO = $curso"
 
-        val c: Cursor = bd.query(ConexionBD.MODULOS_TABLE, null, null, null, null, null, filtro, null)
+        val c: Cursor = bd.rawQuery("SELECT * FROM MODULOS WHERE CICLO='"+ciclo+"' AND CURSO='"+curso+"'",null)
         if (c.moveToFirst()){
             do {
                 val aux = Modulos(c.getString(1), c.getString(2), c.getString(3), c.getInt(4))
@@ -88,6 +115,22 @@ object ModulosController {
         bd.close()
         bdModulos.close()
         return lista
+    }
+
+    fun removeAll(context: Context?): Boolean {
+        // Abrimos la BD en modo escritura
+        val bdDatos = ConexionBD(context, NOMRBE_BD, null, VERSION_BD)
+        val bd: SQLiteDatabase = bdDatos.writableDatabase
+        var sal = false
+        try {
+            bd.execSQL("DELETE FROM ${ConexionBD.MODULOS_TABLE}")
+            sal = true
+        } catch (ex: SQLException) {
+        } finally {
+            bd.close()
+            bdDatos.close()
+            return sal
+        }
     }
 
 }

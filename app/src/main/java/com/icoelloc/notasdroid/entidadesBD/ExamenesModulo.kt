@@ -13,5 +13,5 @@ package com.icoelloc.notasdroid.entidadesBD
  */
 class ExamenesModulo(
     var nombreModulo: String, var correoAlumno: String, var tituloExamen: String, var dia: Int, var mes: Int, var anio: Int,
-    var presentado: Integer, var nota: Float
+    var presentado: Int, var nota: Float
 )
