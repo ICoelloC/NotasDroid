@@ -3,6 +3,7 @@ package com.icoelloc.notasdroid.entidadesBD
 /**
  *Clase POJO para definir el modelo de la tabla ExamenesModulo
  * @property nombreModulo String, este campo indica a que asignatura pertenece el examen
+ * @property correoAlumno String, este campo indica de quien es ese examen
  * @property tituloExamen String, este campo indica cual es el nombre de la prueba
  * @property dia Int, este campo junto con mes y anio, forman la fecha de la prueba
  * @property mes Int, este campo junto con dia y anio, forman la fecha de la prueba
@@ -11,6 +12,6 @@ package com.icoelloc.notasdroid.entidadesBD
  * @property nota Float, este es el campo de la nota del examen
  */
 class ExamenesModulo(
-    var nombreModulo: String, tituloExamen: String, var dia: Int, var mes: Int, var anio: Int,
+    var nombreModulo: String, var correoAlumno: String, var tituloExamen: String, var dia: Int, var mes: Int, var anio: Int,
     var presentado: Integer, var nota: Float
 )
