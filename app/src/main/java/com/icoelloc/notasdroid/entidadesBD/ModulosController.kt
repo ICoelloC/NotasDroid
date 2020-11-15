@@ -2,6 +2,9 @@ package com.icoelloc.notasdroid.entidadesBD
 
 import android.annotation.SuppressLint
 import android.content.Context
+import android.database.Cursor
+import android.database.sqlite.SQLiteDatabase
+import android.os.strictmode.SqliteObjectLeakedViolation
 import com.icoelloc.notasdroid.R
 
 object ModulosController {
@@ -61,9 +64,29 @@ object ModulosController {
     }
     @SuppressLint("Recycle")
 
+            /**
+             * Método selectMódulos, método que nos permite escoger los módulos, por su curso y ciclo
+             * esto, nos permite elegir los modulos que está impartiendo dicho alumno.
+             * Esto nos servirá para cargar la lista recyclerview con la información para cada
+             * módulo, cada módulo, irá en un cardview
+             */
     fun selectModulos(curso: String, ciclo: String, context: Context?):MutableList<Modulos>? {
+        //Se abre la base de datos en modo lectura
         val lista = mutableListOf<Modulos>()
+        val bdModulos = ConexionBD(context, NOMRBE_BD, null, VERSION_BD)
+        val bd:SQLiteDatabase = bdModulos.readableDatabase
 
+        val filtro = "CICLO = $ciclo AND CURSO = $curso"
+
+        val c: Cursor = bd.query(ConexionBD.MODULOS_TABLE, null, null, null, null, null, filtro, null)
+        if (c.moveToFirst()){
+            do {
+                val aux = Modulos(c.getString(1), c.getString(2), c.getString(3), c.getInt(4))
+                lista.add(aux)
+            }while (c.moveToNext())
+        }
+        bd.close()
+        bdModulos.close()
         return lista
     }
 
