@@ -9,7 +9,7 @@
 
     <string name="menu_expediente">Expediente</string>
     <string name="menu_matricula">Matricula</string>
-    <string name="menu_slideshow">Slideshow</string>
+    <string name="menu_examenes">Examenes</string>
 
     <string name="home_fotoperfil">Foto perfil</string>
     <string name="home_nombreyapellidos">Nombre y apellidos alumno</string>

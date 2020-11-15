@@ -18,8 +18,8 @@
         tools:layout="@layout/fragment_matricula" />
 
     <fragment
-        android:id="@+id/nav_slideshow"
-        android:name="com.icoelloc.notasdroid.ui.slideshow.SlideshowFragment"
-        android:label="@string/menu_slideshow"
-        tools:layout="@layout/fragment_slideshow" />
+        android:id="@+id/nav_examenes"
+        android:name="com.icoelloc.notasdroid.ui.examenes.ExamenesFragment"
+        android:label="@string/menu_examenes"
+        tools:layout="@layout/fragment_examenes" />
 </navigation>

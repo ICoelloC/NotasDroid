@@ -14,13 +14,8 @@ class MatriculaFragment : Fragment() {
 
     private lateinit var matriculaViewModel: MatriculaViewModel
 
-    override fun onCreateView(
-            inflater: LayoutInflater,
-            container: ViewGroup?,
-            savedInstanceState: Bundle?
-    ): View? {
-        matriculaViewModel =
-                ViewModelProvider(this).get(MatriculaViewModel::class.java)
+    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
+        matriculaViewModel = ViewModelProvider(this).get(MatriculaViewModel::class.java)
         val root = inflater.inflate(R.layout.fragment_matricula, container, false)
         val textView: TextView = root.findViewById(R.id.matricula_lbl_titulo)
         matriculaViewModel.text.observe(viewLifecycleOwner, Observer {
