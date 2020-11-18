@@ -1,4 +1,4 @@
-package com.icoelloc.notasdroid.ui.slideshow
+package com.icoelloc.notasdroid.ui.examenes
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -10,20 +10,20 @@ import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import com.icoelloc.notasdroid.R
 
-class SlideshowFragment : Fragment() {
+class ExamenesFragment : Fragment() {
 
-    private lateinit var slideshowViewModel: SlideshowViewModel
+    private lateinit var examenesViewModel: ExamenesViewModel
 
     override fun onCreateView(
             inflater: LayoutInflater,
             container: ViewGroup?,
             savedInstanceState: Bundle?
     ): View? {
-        slideshowViewModel =
-                ViewModelProvider(this).get(SlideshowViewModel::class.java)
-        val root = inflater.inflate(R.layout.fragment_slideshow, container, false)
-        val textView: TextView = root.findViewById(R.id.text_slideshow)
-        slideshowViewModel.text.observe(viewLifecycleOwner, Observer {
+        examenesViewModel =
+                ViewModelProvider(this).get(ExamenesViewModel::class.java)
+        val root = inflater.inflate(R.layout.fragment_examenes, container, false)
+        val textView: TextView = root.findViewById(R.id.text_examenes)
+        examenesViewModel.text.observe(viewLifecycleOwner, Observer {
             textView.text = it
         })
         return root

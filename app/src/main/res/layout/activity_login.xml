@@ -62,7 +62,7 @@
         android:contentDescription="@string/login_logoapp" />
 
     <EditText
-        android:id="@+id/editTextTextPassword"
+        android:id="@+id/login_pass"
         android:layout_width="285dp"
         android:layout_height="43dp"
         android:layout_marginStart="100dp"
@@ -84,6 +84,7 @@
         android:clickable="true"
         android:contentDescription="@string/login_btn_login"
         android:focusable="true"
+        android:onClick="ingresar"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:srcCompat="@drawable/ic_login_login" />

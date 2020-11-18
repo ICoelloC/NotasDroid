@@ -9,7 +9,7 @@
 
     <string name="menu_expediente">Expediente</string>
     <string name="menu_matricula">Matricula</string>
-    <string name="menu_slideshow">Slideshow</string>
+    <string name="menu_examenes">Examenes</string>
 
     <string name="home_fotoperfil">Foto perfil</string>
     <string name="home_nombreyapellidos">Nombre y apellidos alumno</string>
@@ -43,4 +43,6 @@
     <string name="register_rbt_segundo">2º</string>
     <string name="register_btn_gallery">Escoger foto de la galería</string>
     <string name="register_btn_camera">Sacar foto</string>
+
+    <string name="icon">Icon</string>
 </resources>

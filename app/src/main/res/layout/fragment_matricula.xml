@@ -17,14 +17,35 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/matricula_listrecycleview"
-        android:layout_width="411dp"
-        android:layout_height="552dp"
-        android:layout_marginTop="17dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.545"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/matricula_lbl_titulo" />
+    <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+        android:id="@+id/modulosSwipe"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" tools:layout_editor_absoluteY="-42dp"
+        tools:layout_editor_absoluteX="-27dp">
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/modulosScroll">
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/matricula_listrecycleview"
+                android:layout_width="411dp"
+                android:layout_height="552dp"
+                android:layout_marginTop="17dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.545"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/matricula_lbl_titulo"
+                tools:listitem="@layout/list_matricula">
+            </androidx.recyclerview.widget.RecyclerView>
+        </ScrollView>
+        <ProgressBar
+            android:id="@+id/modulosProgressBar"
+            style="?android:attr/progressBarStyle"
+            android:layout_width="117dp"
+            android:layout_height="78dp"
+            tools:layout_editor_absoluteX="147dp"
+            tools:layout_editor_absoluteY="250dp"/>
+    </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

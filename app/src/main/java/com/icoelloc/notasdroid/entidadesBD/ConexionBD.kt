@@ -8,18 +8,47 @@ import androidx.annotation.Nullable
 class ConexionBD (@Nullable context: Context?, @Nullable name: String?, @Nullable factory: SQLiteDatabase.CursorFactory?, version: Int) :
     SQLiteOpenHelper(context, name, factory, version) {
 
-    //Sentencia SQL para crear la tabla de Módulos
-    private val MODULOS_DB = "Asignatura"
-    private val CREATE_MODULO_DB = "CREATE TABLE $MODULOS_DB()"
-
     //Sentencia SQL para crear la tabla de Alumno
-    private val ALUMNO_DB = "Alumno"
+    private val CREATE_ALUMNOS_TABLE =
+        "CREATE TABLE $ALUMNOS_TABLE (CORREO TEXT PRIMARY KEY, CONTRASENIA TEXT," +
+                " NOMBRE_APELLIDOS TEXT, FOTO TEXT, CICLO TEXT, CURSO TEXT)"
+    private val DELETE_ALUMNOS_TABLE = "DROP TABLE IF EXISTS $ALUMNOS_TABLE"
 
-    override fun onCreate(db: SQLiteDatabase?) {
-        TODO("Not yet implemented")
+    //SENTECIA SQL PARA CREAR LA TABLA DE MODULOS LE HE QUITADO LA PRIMARY KEY DEL NOMBRE
+    private val CREATE_MODULOS_TABLE =
+        "CREATE TABLE $MODULOS_TABLE (NOMBRE_MODULO TEXT, CICLO TEXT, CURSO TEXT," +
+                " FOTO_MODULO INTEGER)"
+    private val DELETE_MODULOS_TABLE = "DROP TABLE IF EXISTS $MODULOS_TABLE"
+
+    //SENTECIA SQL PARA CREAR LA TABLA DE EXAMENES
+    private val CREATE_EXAMENES_TABLE =
+        "CREATE TABLE $EXAMENES_TABLE (ID INTEGER PRIMARY KEY AUTO INCREMENT, TITULO_EXAMEN TEXT," +
+                " NOMBRE_MODULO TEXT, CORREO_ALUMNO TEXT, DIA INTEGER, MES INTEGER, ANIO INTEGER," +
+                " PRESENTADO INTEGER, NOTA DECIMAL(3,2))"
+    private val DELETE_EXAMENES_TABLE = "DROP TABLE IF EXISTS $EXAMENES_TABLE"
+
+    /**
+     * Crea la base de datos con las siguientes tablas
+     * @param db Es la referencia a la Base de datos SQLite
+     */
+    override fun onCreate(db: SQLiteDatabase) {
+        //Al llamar al onCreate :
+        db.execSQL(CREATE_ALUMNOS_TABLE)
+        db.execSQL(CREATE_MODULOS_TABLE)
+        db.execSQL(CREATE_EXAMENES_TABLE)
     }
 
-    override fun onUpgrade(db: SQLiteDatabase?, oldVersion: Int, newVersion: Int) {
-        TODO("Not yet implemented")
+    override fun onUpgrade(db: SQLiteDatabase, oldVersion: Int, newVersion: Int) {
+        db.execSQL(DELETE_ALUMNOS_TABLE)
+        db.execSQL(DELETE_MODULOS_TABLE)
+        db.execSQL(DELETE_EXAMENES_TABLE)
+        onCreate(db)
     }
+
+    companion object{
+        val ALUMNOS_TABLE = "ALUMNOS"
+        val MODULOS_TABLE = "MODULOS"
+        val EXAMENES_TABLE = "EXAMENES"
+    }
+
 }
