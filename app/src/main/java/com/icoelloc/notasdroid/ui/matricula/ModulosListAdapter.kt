@@ -34,6 +34,8 @@ class ModulosListAdapter(
      */
     override fun onBindViewHolder(holder: DatoViewHolder, position: Int) {
         holder.nombreAsignatura.text = listaModulos[position].nombreModulo
+        holder.ciclo.text = listaModulos[position].ciclo
+        holder.curso.text = listaModulos[position].curso
         holder.logoAsignatura.setImageResource(listaModulos[position].fotoModulo)
         // Programamos el clic de cada fila (itemView)
         holder.itemView
@@ -60,8 +62,9 @@ class ModulosListAdapter(
      * Holder que encapsula los objetos a mostrar en la lista
      */
     class DatoViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
-        // Elementos graficos con los que nos asociamos
         var nombreAsignatura = itemView.matricula_nombreAsignatura
+        var ciclo = itemView.matricula_ciclo
+        var curso = itemView.matricula_curso
         var logoAsignatura = itemView.matricula_logoAsignatura
     }
 }

@@ -97,15 +97,31 @@ object ModulosController {
         }
     }
 
-    fun selectModulos(curso: String, ciclo: String, context: Context?):MutableList<Modulos>? {
+    fun selectModulosFiltrado(curso: String, ciclo: String, context: Context?):MutableList<Modulos>? {
         //Se abre la base de datos en modo lectura
         val lista = mutableListOf<Modulos>()
         val bdModulos = ConexionBD(context, NOMRBE_BD, null, VERSION_BD)
         val bd:SQLiteDatabase = bdModulos.readableDatabase
 
-        val filtro = "WHERE CICLO = $ciclo AND CURSO = $curso"
-
         val c: Cursor = bd.rawQuery("SELECT * FROM MODULOS WHERE CICLO='"+ciclo+"' AND CURSO='"+curso+"'",null)
+        if (c.moveToFirst()){
+            do {
+                val aux = Modulos(c.getString(1), c.getString(2), c.getString(3), c.getInt(4))
+                lista.add(aux)
+            }while (c.moveToNext())
+        }
+        bd.close()
+        bdModulos.close()
+        return lista
+    }
+
+    fun selectModulos(context: Context?):MutableList<Modulos>? {
+        //Se abre la base de datos en modo lectura
+        val lista = mutableListOf<Modulos>()
+        val bdModulos = ConexionBD(context, NOMRBE_BD, null, VERSION_BD)
+        val bd:SQLiteDatabase = bdModulos.readableDatabase
+
+        val c: Cursor = bd.rawQuery("SELECT * FROM MODULOS",null)
         if (c.moveToFirst()){
             do {
                 val aux = Modulos(c.getString(1), c.getString(2), c.getString(3), c.getInt(4))

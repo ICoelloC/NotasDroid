@@ -22,11 +22,27 @@
     <TextView
         android:id="@+id/matricula_nombreAsignatura"
         android:layout_width="wrap_content"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
         android:layout_marginStart="70dp"
         android:gravity="center_vertical"
         android:text="Nombre de la asignatura"
         android:textSize="16sp" />
+
+    <TextView
+        android:id="@+id/matricula_ciclo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="70dp"
+        android:layout_marginTop="25dp"
+        android:text="ciclo" />
+
+    <TextView
+        android:id="@+id/matricula_curso"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="curso"
+        android:layout_marginStart="110dp"
+        android:layout_marginTop="25dp"/>
 
 
 </androidx.cardview.widget.CardView>
